@@ -3,14 +3,14 @@
       <h3 class="font-bold mb-2 px-2"><strong>{{title}}<span>{{assingments.length}}</span></strong></h3>
 
 
-
+<!-- 
       <div class="flex">
-        <!-- <button @click="" class="button" v-for="tag in assingments" :key="tag">{{tag.tag}}</button> -->
-        <!-- 'active' : !isactive -->
         <button @click="currentTag = tag,isactive=!isactive" class="button" v-for="tag in tags" :key="tag" :class="{
           'border-blue-500 text-blue-500': tag === currentTag
         }">{{tag}}</button>
-      </div>
+      </div> -->
+
+      <assignmentTag :tags="assign.assingments.map(a => a.tag)"/>
       <ul>
         <assignmentVue v-for="assignment in filteredAssingments" :key="assignment"  :assignment="assignment"></assignmentVue>
       </ul>
@@ -23,6 +23,7 @@
 <script setup>
 import assignmentVue from './assignment.vue';
 import { computed,ref } from 'vue';
+import assignmentTag from './assignmentTag.vue'
 
 const currentTag = ref ('all')
 const isactive = ref (false)
