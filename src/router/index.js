@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import JokeView from '../components/JokeView.vue'
+import PostApi from '../components/PostApi.vue'
+import practice from '../components/practice.vue'
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: HomeView
   },
@@ -17,9 +19,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/',
+    path: '/joke',
     name:'joke',
     component: JokeView
+  },
+  {
+    path: '/postapi',
+    name:'postapi',
+    component: PostApi
+  },
+  {
+    path:'/practice',
+    name:'practice',
+    component: practice
   }
 ]
 

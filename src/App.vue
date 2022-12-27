@@ -1,12 +1,20 @@
 <template>
   <nav>
-    <!-- <router-link to="/">Home</router-link> | -->
-    <!-- <router-link to="/about">About</router-link>| -->
-    <router-link to="/">Joke</router-link>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>|
+    <router-link to="/joke">Joke</router-link>|
+    <router-link to="/postapi">PostApi</router-link>
+    <router-link to="/practice">Practice</router-link>
   </nav>
+  <assignments-vue />
   <router-view/>
-</template>
 
+</template>
+<script setup>
+import assignmentsVue from './components/assignments.vue';
+
+
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
